@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Warung Mie Gacor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>Warung Mie Gacor</h1>
+    <p>Mie hangat, bumbu mantap, harga pas di kantong. Mulai dari Rp7.000.</p>
+    <span class="jam">Buka setiap hari, 16.00–23.00</span><br>
+    <a class="cta" href="#menu">Lihat menu</a>
+  </div>
+</header>
+<div class="terpal" aria-hidden="true"></div>
+
+<main>
+  <section class="papan" id="menu" aria-labelledby="jmenu">
+    <h2 id="jmenu">Daftar menu</h2>
+    <p>Tekan + untuk menambah pesanan, lalu kirim lewat WhatsApp.</p>
+    <ul class="menu" id="daftar"></ul>
+  </section>
+
+  <section class="form" aria-labelledby="jform">
+    <h2 id="jform">Data pemesan</h2>
+    <div class="field"><label for="nama">Nama</label><input type="text" id="nama" autocomplete="name" placeholder="Contoh: Budi"></div>
+    <div class="field"><label for="hp">No. HP</label><input type="tel" id="hp" inputmode="tel" autocomplete="tel" placeholder="Contoh: 08123456789"></div>
+    <div class="field"><span class="lbl" id="lbayar">Metode pembayaran</span>
+      <fieldset class="bayar" aria-labelledby="lbayar">
+        <label><input type="radio" name="bayar" value="Tunai (bayar di tempat)" checked> Tunai</label>
+        <label><input type="radio" name="bayar" value="Transfer bank"> Transfer bank</label>
+        <label><input type="radio" name="bayar" value="QRIS"> QRIS</label>
+        <label><input type="radio" name="bayar" value="E-wallet (DANA/OVO/GoPay)"> E-wallet</label>
+      </fieldset>
+      <small id="hintbayar">Bayar tunai saat pesanan diambil atau diantar.</small>
+    </div>
+    <div class="field"><label for="catatan">Catatan untuk penjual</label><textarea id="catatan" placeholder="Contoh: pedas level 3, tanpa sayur, telur setengah matang"></textarea></div>
+    <p id="err" role="alert"></p>
+    <div class="ok" id="ok" hidden role="status">
+      <h3>Pesanan <span id="kodeok"></span> siap dikirim</h3>
+      <p>WhatsApp sudah terbuka dengan pesanan Anda. Tekan tombol kirim di WhatsApp agar pesanan masuk ke penjual.</p>
+      <a id="ulang" href="#" target="_blank" rel="noopener">Buka WhatsApp lagi</a>
+      <button type="button" id="baru">Buat pesanan baru</button>
+    </div>
+  </section>
+
+  <section class="info" aria-label="Info warung">
+    <div><b>Cara pesan</b><br>Pilih menu, tekan “Pesan via WhatsApp”, kami siapkan.</div>
+    <div><b>Bayar</b><br>Tunai atau transfer, bayar setelah pesanan jadi.</div>
+    <div><b>Tambahan</b><br>Minta pedas, tanpa sayur, atau telur di catatan WhatsApp.</div>
+  </section>
+</main>
+
+<footer>© Warung Mie Gacor · Dibuat dengan semangat pedagang kaki lima</footer>
+
+<div class="bar" id="bar" role="status" aria-live="polite">
+  <div class="in">
+    <div class="tot"><span id="jml">0 porsi</span><small id="total">Rp0</small></div>
+    <button id="kirim" type="button">Pesan via WhatsApp</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
